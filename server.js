@@ -19,36 +19,36 @@ mongoose.connect('mongodb://localhost/workout', {
 });
 
 //routs
-//app.use(require('./routes/api.js'));
-//app.use(require('./routes/view.js'));
-app.get("/workout", (req, res)=>{
-    workout.find ((err, data)=>{
-        res.send(data);
-    })
-});
-app.get("/test", (req, res)=>{
-   res.end("test");
-});
-app.post("/exercise/add", (req, res)=>{
-    const exercise = {
-        day: req.body.day,
-        exercises:[{
-        type: req.body.type,
-        name: req.body.name,
-        duration: req.body.duration,
-        weight: req.body.weight,
-        reps: req.body.reps,
-        sets:req.body.sets,
-      }]};
+app.use(require('./routes/apiroutes.js'));
+app.use(require('./routes/htmlroutes.js'));
+// app.get("/workout", (req, res)=>{
+//     workout.find ((err, data)=>{
+//         res.send(data);
+//     })
+// });
+// app.get("/test", (req, res)=>{
+//    res.end("test");
+// });
+// app.post("/exercise/add", (req, res)=>{
+//     const exercise = {
+//         day: req.body.day,
+//         exercises:[{
+//         type: req.body.type,
+//         name: req.body.name,
+//         duration: req.body.duration,
+//         weight: req.body.weight,
+//         reps: req.body.reps,
+//         sets:req.body.sets,
+//       }]};
 
-      workout.create(exercise);
-});
-app.get("/view/weights" ,(req, res)=>{
+//       workout.create(exercise);
+// });
+// app.get("/view/weights" ,(req, res)=>{
 
-});
-app.get("/view/duration" ,(req, res)=>{
+// });
+// app.get("/view/duration" ,(req, res)=>{
     
-});
+// });
 app.listen(PORT, ()=>{
     console.log(`App running on ${PORT}!`)
 
