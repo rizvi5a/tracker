@@ -66,6 +66,7 @@ const workoutSeed = [
         name: 'Bench Press',
         duration: 20,
         weight: 285,
+
         reps: 10,
         sets: 4,
       },
