@@ -26,7 +26,7 @@ router.post("/api/workouts",(req,res) =>{
    })
 })
 
-router.get("/api/workouts",(req,res) =>{
+router.get("/api/workouts/range",(req,res) =>{
     db.find({}).limit(7)
     .then(savedRecords => {
        console.log("----Get Route--",savedRecords)
