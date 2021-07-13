@@ -40,7 +40,11 @@ const ExceriseSchema = new Schema({
                 type: Number
                 
             },
-        }]
+        }],
+        day:{
+            type:Date,
+            default:Date.now()
+        }
 
 });
 
